@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+} 
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+
+/*----- HEADER -----*/
+.header{
+    overflow: hidden;
+    background-color:rgba(255, 255, 251, 0.797);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    z-index: 1;
+}
+
+.name_container{
+    font-family: 'Bodoni Moda', serif;
+    font-size: 16px;
+    color: rgb(37, 26, 5);
+    margin: 20px 40px 20px auto;
+}
+
+.name_container h1{
+    margin: 0;
+    text-shadow: 10px 5px 0px rgba(255, 153, 204, 0.586),-10px -4px 0px rgba(100, 165, 183, 0.506);
+}
+
+.main_container{
+    width: auto;
+    height: auto;
+    top: 113px;
+    position: absolute;
+    background-color: rgba(166, 168, 169, 0.111);
+    background-attachment: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+/*----------------- Features photos-----------------*/
+.card_photo{
+    margin: 35px;
+    position: relative;
+    width: 400px;
+    height: 590px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card_photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.overlay{
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    place-content: center;
+    background-color: rgba(240, 248, 255, 0.552);
+    opacity: 0;
+    transition: .6s ease-out;
+}
+
+.card_photo:hover .overlay{
+    opacity: 1;
+  }
+
+
+
+
+/*----------------------------------------------------------*/
+/*------------- MEDIA QUERYS - mobiles' layout-------------*/
+/*--------------------------------------------------------*/
+@media screen and (max-width: 700px){
+    .name_container{
+        font-size: 16px;
+        color: rgb(37, 26, 5);
+        margin: 20px auto 20px auto;
+    }
+}
