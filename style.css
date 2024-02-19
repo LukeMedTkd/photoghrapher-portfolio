@@ -159,7 +159,7 @@ html{
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
   }
-  
+
   .menu__item {
     display: block;
     padding: 12px 24px;
@@ -192,6 +192,7 @@ html{
     row-gap: 5vw;
     column-gap: auto;
     margin: 150px auto auto auto;
+    padding-bottom: 50px;
 }
 
 
