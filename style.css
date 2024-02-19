@@ -55,8 +55,9 @@ html{
 
 .name_container h1{
     margin: 0;
-    text-shadow: 10px 5px 0px rgba(255, 153, 204, 0.586),-10px -4px 0px rgba(100, 165, 183, 0.506);
+    text-shadow: 2px 2px 0px rgba(255, 153, 204, 0.586), -3px -2px 0px rgba(100, 165, 183, 0.506);
 }
+
 
 /*--- Menu Container ---*/
 .menu{
@@ -64,12 +65,12 @@ html{
 }
 
 .menu ul{
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    list-style-type: none;
-    overflow: hidden;
-    padding: 0;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
 }
 
 .menu li{
@@ -91,7 +92,6 @@ html{
 }
 
 /*------ Hamburger Menu ------*/
-
 #menu__toggle {
     opacity: 0;
   }
@@ -159,6 +159,7 @@ html{
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
   }
+  
   .menu__item {
     display: block;
     padding: 12px 24px;
@@ -248,9 +249,7 @@ html{
 .card_photo:focus .overlay,
 .card_photo:active .overlay{
     opacity: 1;
-  }
-
-
+}
 
 
 /*----------------------------------------------------------*/
@@ -260,7 +259,7 @@ html{
     .name_container{
         font-size: 16px;
         color: rgb(37, 26, 5);
-        margin: 20px 20% 20px auto;
+        margin: 20px 35% 20px;
     }
 
     .menu{
@@ -270,6 +269,4 @@ html{
     .menu__btn {
         display: block;
     }
-
-
 }

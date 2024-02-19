@@ -52,7 +52,7 @@ html{
 
 .name_container h1{
     margin: 0;
-    text-shadow: 10px 5px 0px rgba(255, 153, 204, 0.586),-10px -4px 0px rgba(100, 165, 183, 0.506);
+    text-shadow: 2px 2px 0px rgba(255, 153, 204, 0.586), -3px -2px 0px rgba(100, 165, 183, 0.506);
 }
 
 /*--- Menu Container ---*/
