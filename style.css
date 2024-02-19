@@ -15,6 +15,7 @@ body{
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  background-color: rgba(166, 168, 169, 0.111);
 }
 
 
@@ -181,20 +182,22 @@ html{
 .main_container{
     width: auto;
     height: auto;
-    top: 113px;
     position: absolute;
-    background-color: rgba(166, 168, 169, 0.111);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:space-around;
+    background-color: transparent;
+    row-gap: 5vw;
+    column-gap: auto;
+    margin: 150px auto auto auto;
 }
 
 
 /*---------------------------------------------------*/
 /*----------------- Features photos-----------------*/
 .card_photo{
-    margin: 35px;
+    margin: auto 5px auto;
     position: relative;
     width: 400px;
     height: 590px;
@@ -267,4 +270,6 @@ html{
     .menu__btn {
         display: block;
     }
+
+
 }
