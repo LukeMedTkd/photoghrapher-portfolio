@@ -1,58 +1,67 @@
 *{
-    box-sizing: border-box;
-    scroll-behavior:smooth;
-} 
-
-body{
-    height: 100%;
-    width: 100%;
     padding: 0;
     margin: 0;
-    min-height: 100vh;
-    display: flex;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  } 
+  
+  
+  body, html{
+    /* display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    align-items: flex-start;
-}
-  
-html{
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
+    align-items: flex-start; */
+    background-color: rgba(166, 168, 169, 0.111);
+  }
 
 /*--------------------------------------------*/
 /*------------------ HEADER -----------------*/
 .header{
     overflow: hidden;
-    background-color:rgba(255, 255, 251, 0.797);
+    background-color:rgba(255, 255, 251, 0.95);
     position: fixed;
-    top: 0;
     width: 100%;
     height: auto;
     display: flex;
     place-items: center;
     z-index: 1;
-}
+  }
 
 .name_container{
-    cursor: pointer;
-    font-family: 'Bodoni Moda', serif;
-    font-size: 16px;
-    color: rgb(37, 26, 5);
-    margin: 20px auto 20px 40px;
+  cursor: pointer;
+  font-family: 'Bodoni Moda', serif;
+  color: rgb(37, 26, 5);
+  margin: 20px auto 20px 40px;
 }
 
 .name_container a{
-    text-decoration: none;
-    color: rgb(37, 26, 5);
+  text-decoration: none;
+  color: rgb(37, 26, 5);
 }
 
 .name_container h1{
-    margin: 0;
-    text-shadow: 2px 2px 0px rgba(255, 153, 204, 0.586), -3px -2px 0px rgba(100, 165, 183, 0.506);
+  font-size: 32px;
+  margin: 0;
+  text-shadow: 2px 2px 0px rgba(255, 153, 204, 0.586), -3px -2px 0px rgba(100, 165, 183, 0.506);
+}
+
+.name_container h1:nth-child(1){
+  font-weight: 900; 
+  line-height: 25px;
+}
+
+.name_container h1:nth-child(2){
+  font-weight: 900;
+  margin-right: 67px;
+  line-height: 38px;
+}
+
+.name_container h1:nth-child(3){
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 1.38px;
+  line-height: 15px;
 }
 
 /*--- Menu Container ---*/
@@ -84,34 +93,29 @@ html{
 .menu ul:hover > :not(:hover),
 .menu ul:focus > :not(:focus),
 .menu ul:active > :not(:active){
-    opacity: .4;
+    opacity: .32;
 }
 
 /*------ Hamburger Menu ------*/
-
 #menu__toggle {
     opacity: 0;
-}
-
-#menu__toggle:checked + .menu__btn > span {
+  }
+  #menu__toggle:checked + .menu__btn > span {
     transform: rotate(45deg);
-}
-
-#menu__toggle:checked + .menu__btn > span::before {
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
     top: 0;
     transform: rotate(0deg);
-}
-
-#menu__toggle:checked + .menu__btn > span::after {
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
     top: 0;
     transform: rotate(90deg);
-}
-
-#menu__toggle:checked ~ .menu__box {
+  }
+  #menu__toggle:checked ~ .menu__box {
     left: 0 !important;
-}
-
-.menu__btn {
+  }
+  
+  .menu__btn {
     display: none;
     position: fixed;
     top: 60px;
@@ -120,11 +124,11 @@ html{
     height: 26px;
     cursor: pointer;
     z-index: 1;
-}
-
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
+  }
+  
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
     display: block;
     position: relative;
     width: 100%;
@@ -134,19 +138,18 @@ html{
     box-shadow: 0.9px 1px 0px rgba(255, 153, 204, 0.586),-0.9px -1px 0px rgba(100, 165, 183, 0.506);
     fill-opacity: 10px;
     transition-duration: .25s;
-}
-
-.menu__btn > span::before {
+  }
+  
+  .menu__btn > span::before {
     content: '';
     top: -8px;
-}
-
-.menu__btn > span::after {
+  }
+  .menu__btn > span::after {
     content: '';
     top: 8px;
-}
-
-.menu__box {
+  }
+  
+  .menu__box {
     display: block;
     position: fixed;
     top: 0;
@@ -159,11 +162,10 @@ html{
     list-style: none;
     background-color:rgba(255, 255, 251, 0.797);
     backdrop-filter: blur(10px);  
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
-}
-
-.menu__item {
+  }
+  .menu__item {
     display: block;
     padding: 12px 24px;
     color: rgb(37, 26, 5);
@@ -172,13 +174,13 @@ html{
     font-weight: 300;
     text-decoration: none;
     transition-duration: .25s;
-}
-
-.hamburger-menu ul:hover > :not(:hover),
-.hamburger-menu ul:focus > :not(:focus),
-.hamburger-menu ul:active > :not(:active){
+  }
+  
+  .hamburger-menu ul:hover > :not(:hover),
+  .hamburger-menu ul:focus > :not(:focus),
+  .hamburger-menu ul:active > :not(:active){
     opacity: .4;
-}
+  }
 
 
 
@@ -294,58 +296,83 @@ html{
 /*----------------------------------------------------------*/
 /*------------- MEDIA QUERYS - mobiles' layout-------------*/
 /*--------------------------------------------------------*/
-@media screen and (max-width: 900px){
-    .name_container{
-        font-size: 16px;
-        color: rgb(37, 26, 5);
-        margin: 20px 100px 20px auto;
-    }
+@media screen and (max-width: 750px){
+  .name_container{
+      cursor: pointer;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 10px;
+      color: rgb(37, 26, 5);
+      margin: 20px auto 20px;
+  }
 
-    .menu{
+  .name_container h1{
+      font-size: 24px;
+      margin: 0;
+      text-shadow: 2px 2px 0px rgba(255, 153, 204, 0.586), -3px -2px 0px rgba(100, 165, 183, 0.506);
+  }
+    
+  .name_container a h1:nth-child(1) {
+      font-weight: 900;
+      line-height: 18px;
+  }
+    
+  .name_container a h1:nth-child(2){
+      font-weight: 900;
+      margin-right: 67px;
+      line-height: 30px;
+  }
+    
+  .name_container a h1:nth-child(3){
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: 1.38px;
+      line-height: 13px;
+  }
+
+  .menu__btn > span::before {
+      content: '';
+      top: -6px;
+  }
+
+  .menu__btn > span::after {
+      content: '';
+      top: 4px;
+  }
+
+  .menu__btn {
+      display: block;
+      position: fixed;
+      top: 50px;
+      left: 45px;
+      width: 22px;
+      cursor: pointer;
+      z-index: 1;
+  }
+
+  .menu{
         display: none;
-    }
+  }
 
-    .menu__btn {
-        display: block;
-    }
-
-    .aboutme{
-        width: 100%;
-        height: auto;
-        margin: 40% 15px auto 15px;
-    }
-    
-    .aboutme .img-description{
-        max-width: 900px;
-        position: relative;
-        display: block;
-    }
-    
-    .img-description img{
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-    
-    
-    .aboutme .description-container{
-        max-width: 100%;
-    }
-}
-
-
-@media screen and (max-width: 700px){
-    .name_container{
-        font-size: 16px;
-        color: rgb(37, 26, 5);
-        margin: 20px 20% 20px auto;
-    }
-
-    .menu{
-        display: none;
-    }
-
-    .menu__btn {
-        display: block;
-    }
+  .aboutme{
+      width: 100%;
+      height: auto;
+      margin: 40% 15px auto 15px;
+  }
+  
+  .aboutme .img-description{
+      max-width: 900px;
+      position: relative;
+      display: block;
+  }
+  
+  .img-description img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+  }
+  
+  
+  .aboutme .description-container{
+      max-width: 100%;
+  }
 }
