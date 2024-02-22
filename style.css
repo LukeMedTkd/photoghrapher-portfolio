@@ -164,6 +164,7 @@ body, html{
   padding-top: 100px;
   list-style: none;
   background-color:rgba(255, 255, 251, 0.797);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);  
   box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
   transition-duration: .25s;
@@ -228,6 +229,7 @@ body, html{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   z-index: 0;
   position: absolute;
   top: 0;
@@ -244,15 +246,40 @@ body, html{
 
 .overlay h3{
     margin: 0;
-    text-align: center;
     font-size: 20px;
     font-weight: 300;
     line-height: 18px;
 }
 
-.overlay h3 span{
+.overlay span{
     font-size: 18px;
     font-weight: 200;
+}
+
+.overlay section:nth-last-child(1){
+  position: relative;
+  height: auto;
+  width: 50%;
+  display: grid;
+  grid-template: auto/auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 15px;
+  border-top: solid 0.8px;
+  padding: 18px 0 0 20px;
+  margin-top: 15px;
+  opacity: .7;
+}
+
+.overlay section:nth-last-child(1) div{
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.overlay section:nth-last-child(1) h3{
+  font-size: 14px;
+  font-weight: 200;
 }
 
 .card_photo:hover .overlay,
@@ -298,7 +325,7 @@ body, html{
 
 
 /*----------------------------------------------------------*/
-/*------------- MEDIA QUERYS - tablet' layout-------------*/
+/*----------------- MEDIA QUERYS - 990px ------------------*/
 /*--------------------------------------------------------*/
 @media screen and (max-width: 990px){
 
@@ -423,15 +450,17 @@ body, html{
     background-color: transparent;
     row-gap: 5vw;
     margin: 150px auto auto auto;
-    padding: 0px 30px 70px;
+    padding: 0px 45px 70px;
   }   
 
   .card_photo{
     margin: auto;
+    padding: 0;
     position: relative;
     width: 100%;
-    height: auto;
+    height: 125vw;
     background-color: transparent;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   }
+
 }
