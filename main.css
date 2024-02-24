@@ -7,14 +7,8 @@
 
 
 body, html{
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: flex-start; */
   background-color: rgba(166, 168, 169, 0.111);
 }
-
 
 /*------------------------------------------*/
 /*------------------ HEADER ---------------*/
@@ -169,6 +163,7 @@ body, html{
   box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
   transition-duration: .25s;
 }
+
 .menu__item {
   display: block;
   padding: 12px 24px;
@@ -191,17 +186,16 @@ body, html{
 /*--------------------------------------------*/
 /*--------------- MAIN CONTAINER ------------*/
 .main_container{
-    width: auto;
-    height: auto;
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-    background-color: transparent;
-    row-gap: 5vw;
-    column-gap: auto;
-    margin: 150px auto auto auto;
-    padding-bottom: 70px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: transparent;
+  gap: 5vw 0;
+  margin: 150px auto auto auto;
+  padding-bottom: 70px;
 }
 
 
@@ -233,27 +227,27 @@ body, html{
   z-index: 0;
   position: absolute;
   top: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.51), rgba(255, 255, 255, 0.897));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.51), rgba(255, 255, 255, 0.9));
   opacity: 0;
   transition: 1.3s ease-out;
 }
 
 .overlay section{
-    margin: 5px;
-    width: auto;
-    height: auto;
+  margin: 5px;
+  width: auto;
+  height: auto;
 }
 
 .overlay h3{
-    margin: 0;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 18px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 18px;
 }
 
 .overlay span{
-    font-size: 18px;
-    font-weight: 200;
+  font-size: 18px;
+  font-weight: 200;
 }
 
 .overlay section:nth-last-child(1){
@@ -303,22 +297,12 @@ body, html{
   /*--------------------------------------------*/
   /*--------------- MAIN CONTAINER ------------*/
   .main_container{
-    width: auto;
-    height: auto;
-    position: absolute;
-    background-color: transparent;
-    row-gap: 3vw;
-    margin: 150px auto auto auto;
     padding: 0px 30px 70px;
   }   
 
   .card_photo{
-    margin: auto 10px auto;
-    position: relative;
-    width: 450px;
-    height: 600px;
-    background-color: transparent;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    width: 430px;
+    height: 580px;
   }
 
 }
@@ -331,49 +315,25 @@ body, html{
 
   /*--------------------------------------------*/
   /*--------------- MAIN CONTAINER ------------*/
-  .main_container{
-    width: auto;
-    height: auto;
-    position: absolute;
-    background-color: transparent;
-    row-gap: 3vw;
-    margin: 150px auto auto auto;
-    padding: 0px 30px 70px;
-  }   
-
   .card_photo{
-    margin: auto 10px auto;
-    position: relative;
     width: 380px;
-    height: 530px;
-    background-color: transparent;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    height: 530px; 
   }
 
 }
 
 
-@media screen and (max-width: 850px){
+/*----------------------------------------------------------*/
+/*----------------- MEDIA QUERYS - 880px ------------------*/
+/*--------------------------------------------------------*/
+
+@media screen and (max-width: 880px){
 
   /*--------------------------------------------*/
-  /*--------------- MAIN CONTAINER ------------*/
-  .main_container{
-    width: auto;
-    height: auto;
-    position: absolute;
-    background-color: transparent;
-    row-gap: 3vw;
-    margin: 150px auto auto auto;
-    padding: 0px 30px 70px;
-  }   
-
+  /*--------------- MAIN CONTAINER ------------*/  
   .card_photo{
-    margin: auto 10px auto;
-    position: relative;
     width: 330px;
     height: 480px;
-    background-color: transparent;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   }
 
 }
@@ -382,7 +342,7 @@ body, html{
 /*----------------------------------------------------------*/
 /*------------- MEDIA QUERYS - mobiles' layout-------------*/
 /*--------------------------------------------------------*/
-@media screen and (max-width: 750px){
+@media screen and (max-width: 760px){
 
   /*------------------------------------------*/
   /*------------------ HEADER ---------------*/
@@ -444,13 +404,7 @@ body, html{
   /*--------------------------------------------*/
   /*--------------- MAIN CONTAINER ------------*/
   .main_container{
-    width: auto;
-    height: auto;
-    position: absolute;
-    background-color: transparent;
-    row-gap: 5vw;
-    margin: 150px auto auto auto;
-    padding: 0px 45px 70px;
+    padding: 0px 35px 70px;
   }   
 
   .card_photo{
@@ -459,8 +413,6 @@ body, html{
     position: relative;
     width: 100%;
     height: 125vw;
-    background-color: transparent;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   }
 
 }
