@@ -20,6 +20,15 @@
     <!-- AOS library - scripts for goals aniamations -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+    function unsetCheckbox(checkboxId) {
+        var checkbox = document.getElementById(checkboxId);
+        if (checkbox) {
+            checkbox.checked = false;
+        } else {
+            console.error("Checkbox with ID '" + checkboxId + "' not found.");
+        }
+        }
+
       AOS.init({
         duration: 600,
         once: false
@@ -65,52 +74,130 @@
     <div class="main_container">
 
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
-            <img src="images/bn1.jpg" alt="">
-            <div class="overlay">
-                <section>
-                    <h3>Subject: <span>The sea</span></h3>
-                </section>
-                <section>
-                    <h3>Theme: <span>Nature</span></h3>
-                </section>
-                <section>
-                    <h3>Location: <span>Pistis</span></h3>
-                </section>
-                <section>
-                    <div><img src="icons/camera.png" alt=""></div>
-                    <h3 style="padding-top: 5px;">Canon EOS200D</h3>
-                    <div><img src="icons/iso.png" alt=""></div>
-                    <h3>900</h3>
-                    <div><img src="icons/aperture.png" alt=""></div>
-                    <h3>f 2.4</h3>
-                    <div><img src="icons/clock.png" alt=""></div>
-                    <h3>1/200</h3>
-                </section>
+            <input type="checkbox" id="card-toggle2" class="back-btn" onclick="unsetCheckbox('card-toggle1')">
+            <input type="checkbox" id="card-toggle1" class="front-btn" onclick="unsetCheckbox('card-toggle2')">
+            <!-- Card Inner-->
+            <div class="card-inner">
+
+                <!-- Front Card-->
+                <div class="card-front">
+                    <img src="images/bn1.jpg" alt="">
+                    <div class="overlay">
+                        <section>
+                            <h3>Subject: <span>The sea</span></h3>
+                        </section>
+                        <section>
+                            <h3>Theme: <span>Nature</span></h3>
+                        </section>
+                        <section>
+                            <h3>Location: <span>Pistis</span></h3>
+                        </section>
+
+                        <!-- Photo Features -->
+                        <section>
+                            <div><img src="icons/camera.png" alt=""></div>
+                            <h3 style="padding-top: 5px;">Canon EOS200D</h3>
+                            <div><img src="icons/iso.png" alt=""></div>
+                            <h3>900</h3>
+                            <div><img src="icons/aperture.png" alt=""></div>
+                            <h3>f 2.4</h3>
+                            <div><img src="icons/clock.png" alt=""></div>
+                            <h3>1/200</h3>
+                        </section>
+
+                        <!--FLIP ME label-->
+                        <section>
+                            <label for="card-toggle1" class="button">
+                                <h3>FLIP ME</h3>
+                            </label>
+                            <label for="card-toggle1" class="button">
+                                <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
+                            </label>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Back Card-->
+                <div class="card-back">
+                    <p>
+                        “Soltanto il mare gli brontolava la solita storia lì sotto, 
+                        in mezzo ai faraglioni perché il mare non ha paese nemmeno lui, 
+                        ed è di tutti quelli che lo stanno ad ascoltare"
+                    </p>
+                    <!--FLIP ME label-->
+                    <section>
+                        <label for="card-toggle2" class="button">
+                            <h3>FLIP ME</h3>
+                        </label>
+                        <label for="card-toggle2" class="button">
+                            <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
+                        </label>
+                    </section>
+                  </div>
             </div>
         </div>
 
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
-            <img src="images/bn3.jpg" alt="">
-            <div class="overlay">
-                <section>
-                    <h3>Subject: <span>Antonella</span></h3>
-                </section>
-                <section>
-                    <h3>Theme: <span>Maternal Love</span></h3>
-                </section>
-                <section>
-                    <h3>Location: <span>Villacidro</span></h3>
-                </section>
-                <section>
-                    <div><img src="icons/camera.png" alt=""></div>
-                    <h3 style="padding-top: 5px;">Canon EOS200D</h3>
-                    <div><img src="icons/iso.png" alt=""></div>
-                    <h3>900</h3>
-                    <div><img src="icons/aperture.png" alt=""></div>
-                    <h3>f 2.4</h3>
-                    <div><img src="icons/clock.png" alt=""></div>
-                    <h3>1/200</h3>
-                </section>
+            <input type="checkbox" id="card-toggle3" class="back-btn" onclick="unsetCheckbox(this.id)">
+            <input type="checkbox" id="card-toggle4" class="front-btn" onclick="unsetCheckbox(this.id)">
+            <!-- Card Inner-->
+            <div class="card-inner">
+
+                <!-- Front Card-->
+                <div class="card-front">
+                    <img src="images/bn3.jpg" alt="">
+                    <div class="overlay">
+                        <section>
+                            <h3>Subject: <span>The sea</span></h3>
+                        </section>
+                        <section>
+                            <h3>Theme: <span>Nature</span></h3>
+                        </section>
+                        <section>
+                            <h3>Location: <span>Pistis</span></h3>
+                        </section>
+
+                        <!-- Photo Features -->
+                        <section>
+                            <div><img src="icons/camera.png" alt=""></div>
+                            <h3 style="padding-top: 5px;">Canon EOS200D</h3>
+                            <div><img src="icons/iso.png" alt=""></div>
+                            <h3>900</h3>
+                            <div><img src="icons/aperture.png" alt=""></div>
+                            <h3>f 2.4</h3>
+                            <div><img src="icons/clock.png" alt=""></div>
+                            <h3>1/200</h3>
+                        </section>
+
+                        <!--FLIP ME label-->
+                        <section>
+                            <label for="card-toggle3" class="button">
+                                <h3>FLIP ME</h3>
+                            </label>
+                            <label for="card-toggle3" class="button">
+                                <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
+                            </label>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Back Card-->
+                <div class="card-back">
+                    <p>
+                        “Soltanto il mare gli brontolava la solita storia lì sotto, 
+                        in mezzo ai faraglioni perché il mare non ha paese nemmeno lui, 
+                        ed è di tutti quelli che lo stanno ad ascoltare"
+                    </p>
+                    <!--FLIP ME label-->
+                    <section>
+                        <label for="card-toggle4" class="button">
+                            <h3>FLIP ME</h3>
+                        </label>
+                        <label for="card-toggle4" class="button">
+                            <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
+                        </label>
+                    </section>
+                  </div>
             </div>
         </div>
 
