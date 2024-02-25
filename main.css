@@ -203,7 +203,7 @@ body, html{
 /*--------------------- Cards ----------------------*/
 .card_photo{
   font-family: 'IBM Plex Sans Arabic', sans-serif;
-  margin: auto 10px auto;
+  margin: auto 10px 5px;
   position: relative;
   width: 28vw;
   height: 40vw;
