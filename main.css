@@ -208,7 +208,7 @@ body, html{
   width: 28vw;
   height: 40vw;
   background-color: transparent;
-  perspective: 650px;
+  perspective: 850px;
 }
 
 .card_photo:hover .overlay,
@@ -217,9 +217,6 @@ body, html{
     opacity: 1;
 }
 
-.card_photo input[type="checkbox"] {
-  display:none;
-}
 
 .card-inner {
   width: 100%;
@@ -227,27 +224,26 @@ body, html{
   position: relative;
   transform-style: preserve-3d;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: all 1.6s cubic-bezier(1, 0.1, 0.2, 1);
 }
+
+
+
 
 .card_photo .front-btn:checked ~ .card-inner {
   animation: oscillate1 1.8s cubic-bezier(1, -0.55, 0.26, 1) forwards;
 }
-
 .card_photo .back-btn:checked ~ .card-inner {
   animation: oscillate2 1s cubic-bezier(1, 0.1, 0.2, 1) both;
 }
-
-
 @keyframes oscillate1 {
   0% {
     transform: rotateY(0deg);
   }
-
   100% {
     transform: rotateY(180deg);
   }
 }
-
 @keyframes oscillate2 {
   from{
     transform: rotateY(-180deg);
@@ -256,6 +252,7 @@ body, html{
     transform: rotateY(0deg);
   }
 }
+
 
 .card-front,
 .card-back {
@@ -282,6 +279,19 @@ body, html{
   line-height: 23px;
   text-align: justify;
   padding: 0 50px 0;
+}
+
+.card-back p span{
+  font-size: 44px;
+  line-height: 0px;
+}
+
+.card-back p span:nth-child(1){
+  margin: auto 5px auto auto;
+}
+
+.card-back p span:nth-child(2){
+  margin: auto auto auto 10px;
 }
 
 .card_photo img{
@@ -351,20 +361,25 @@ body, html{
   font-weight: 200;
 }
 
-/* Flip Me label */
-.overlay section:nth-last-child(1),
-.card-back section:nth-last-child(1){
+/* Flip Me button */
+.overlay button,
+.card-back button{
+  font-family: inherit;
   height: auto;
-  width: 30%;
+  width: auto;
+  background-color: transparent;
+  border: none;
   position: absolute;
   bottom: 25px;
+  left: 0;
+  right: 0;
   display: grid;
   grid-template: auto/auto auto;
   align-items: center;
   justify-content: center;
   opacity: .9;
   gap: 0 7px;
-  perspective: 200px;
+  perspective: 100px;
   cursor: pointer;
 }
 

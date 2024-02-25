@@ -20,14 +20,12 @@
     <!-- AOS library - scripts for goals aniamations -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-    function unsetCheckbox(checkboxId) {
-        var checkbox = document.getElementById(checkboxId);
-        if (checkbox) {
-            checkbox.checked = false;
-        } else {
-            console.error("Checkbox with ID '" + checkboxId + "' not found.");
-        }
-        }
+    function flipCard(card_inner_id) {
+        var card = document.getElementById(card_inner_id);
+        // var card = document.querySelector(card_inner_id);
+        card.style.transform = card.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+    }
+
 
       AOS.init({
         duration: 600,
@@ -73,11 +71,10 @@
 
     <div class="main_container">
 
+        <!-- 1 CARD -->
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
-            <input type="checkbox" id="card-toggle2" class="back-btn" onclick="unsetCheckbox('card-toggle1')">
-            <input type="checkbox" id="card-toggle1" class="front-btn" onclick="unsetCheckbox('card-toggle2')">
             <!-- Card Inner-->
-            <div class="card-inner">
+            <div class="card-inner" id="c1">
 
                 <!-- Front Card-->
                 <div class="card-front">
@@ -105,14 +102,12 @@
                             <h3>1/200</h3>
                         </section>
 
-                        <!--FLIP ME label-->
+                        <!--FLIP ME button-->
                         <section>
-                            <label for="card-toggle1" class="button">
+                            <button onclick="flipCard('c1')">
                                 <h3>FLIP ME</h3>
-                            </label>
-                            <label for="card-toggle1" class="button">
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
-                            </label>
+                            </button>
                         </section>
                     </div>
                 </div>
@@ -120,41 +115,38 @@
                 <!-- Back Card-->
                 <div class="card-back">
                     <p>
-                        “Soltanto il mare gli brontolava la solita storia lì sotto, 
-                        in mezzo ai faraglioni perché il mare non ha paese nemmeno lui, 
-                        ed è di tutti quelli che lo stanno ad ascoltare"
+                        <span>“</span>Soltanto il mare gli brontolava la solita storia lì sotto, 
+                        in mezzo ai faraglioni perché il mare non ha paese nemmeno lui, ed è di 
+                        tutti quelli che lo stanno ad ascoltare<span>„</span>
                     </p>
-                    <!--FLIP ME label-->
+                    <!--FLIP ME button-->
                     <section>
-                        <label for="card-toggle2" class="button">
+                        <button onclick="flipCard('c1')">
                             <h3>FLIP ME</h3>
-                        </label>
-                        <label for="card-toggle2" class="button">
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
-                        </label>
+                        </button>
                     </section>
                   </div>
             </div>
         </div>
 
+        <!-- 2 CARD -->
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
-            <input type="checkbox" id="card-toggle3" class="back-btn" onclick="unsetCheckbox(this.id)">
-            <input type="checkbox" id="card-toggle4" class="front-btn" onclick="unsetCheckbox(this.id)">
             <!-- Card Inner-->
-            <div class="card-inner">
+            <div class="card-inner" id="c2">
 
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/bn3.jpg" alt="">
                     <div class="overlay">
                         <section>
-                            <h3>Subject: <span>The sea</span></h3>
+                            <h3>Subject: <span>Antonella</span></h3>
                         </section>
                         <section>
-                            <h3>Theme: <span>Nature</span></h3>
+                            <h3>Theme: <span>Maternal Love</span></h3>
                         </section>
                         <section>
-                            <h3>Location: <span>Pistis</span></h3>
+                            <h3>Location: <span>Villacidro</span></h3>
                         </section>
 
                         <!-- Photo Features -->
@@ -169,14 +161,12 @@
                             <h3>1/200</h3>
                         </section>
 
-                        <!--FLIP ME label-->
+                        <!--FLIP ME button-->
                         <section>
-                            <label for="card-toggle3" class="button">
+                            <button onclick="flipCard('c2')">
                                 <h3>FLIP ME</h3>
-                            </label>
-                            <label for="card-toggle3" class="button">
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
-                            </label>
+                            </button>
                         </section>
                     </div>
                 </div>
@@ -184,23 +174,20 @@
                 <!-- Back Card-->
                 <div class="card-back">
                     <p>
-                        “Soltanto il mare gli brontolava la solita storia lì sotto, 
-                        in mezzo ai faraglioni perché il mare non ha paese nemmeno lui, 
-                        ed è di tutti quelli che lo stanno ad ascoltare"
+                        <span>“</span>Quote<span>„</span>
                     </p>
-                    <!--FLIP ME label-->
+                    <!--FLIP ME button-->
                     <section>
-                        <label for="card-toggle4" class="button">
+                        <button onclick="flipCard('c2')">
                             <h3>FLIP ME</h3>
-                        </label>
-                        <label for="card-toggle4" class="button">
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
-                        </label>
+                        </button>
                     </section>
                   </div>
             </div>
         </div>
 
+        <!-- 3 CARD -->
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
             <img src="images/bn2.jpg" alt="">
             <div class="overlay">
@@ -226,6 +213,7 @@
             </div>
         </div>
 
+        <!-- 4 CARD -->
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
             <img src="images/bn4.jpg" alt="">
             <div class="overlay">
@@ -251,6 +239,7 @@
             </div>
         </div>
 
+        <!-- 5 CARD -->        
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
             <img src="images/bn5.jpg" alt="">
             <div class="overlay">
@@ -276,6 +265,7 @@
             </div>
         </div>
 
+        <!-- 6 CARD -->
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
             <img src="images/cosce.jpg" alt="" style="background-position: bottom;">
             <div class="overlay">
@@ -301,6 +291,7 @@
             </div>
         </div>
 
+        <!-- 7 CARD -->
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
             <img src="images/portrait1.jpg" alt="">
             <div class="overlay">
@@ -327,6 +318,7 @@
             
         </div>
 
+        <!-- 8 CARD -->
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
             <img src="images/portait2.jpg" alt="">
             <div class="overlay">
@@ -352,6 +344,7 @@
             </div>
         </div>
 
+        <!-- 9 CARD -->
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
             <img src="images/m.jpg" alt="">
             <div class="overlay">
