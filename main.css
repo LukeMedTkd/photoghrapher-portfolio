@@ -365,6 +365,8 @@ body, html{
 .overlay button,
 .card-back button{
   font-family: inherit;
+  text-decoration: none;
+  font-style: unset;
   height: auto;
   width: auto;
   background-color: transparent;
@@ -381,6 +383,15 @@ body, html{
   gap: 0 7px;
   perspective: 100px;
   cursor: pointer;
+}
+
+.overlay button:active,
+.overlay button:focus,
+.card-back button:active,
+.overlay button:focus{
+  background-color: none;
+  text-decoration: none;
+  font-style: none;
 }
 
 .overlay section:nth-last-child(1) div,
