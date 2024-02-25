@@ -244,9 +244,15 @@ body, html{
   }
 } 
 
-.card-front:hover .overlay,
+/* .card-front:hover .overlay,
 .card-front:focus .overlay,
-.card-front:active .overlay{
+.card-front:active .overlay
+{
+    opacity: 1;
+} */
+
+.card-front:hover .overlay
+{
     opacity: 1;
 }
 
