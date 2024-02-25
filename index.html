@@ -23,7 +23,7 @@
     function flipCard_front(card_inner_id) {
         var card = document.getElementById(card_inner_id);
         var overlay_effect = document.querySelector(".overlay");
-        overlay_effect.classList.toggle("hover", "focus", "active");
+        overlay_effect.classList.add("hover", "focus", "active");
         card.classList.remove("animating_back");
         card.classList.add("animating_front");
     }
