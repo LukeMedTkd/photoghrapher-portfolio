@@ -22,8 +22,8 @@
     <script>
     function flipCard_front(card_inner_id) {
         var card = document.getElementById(card_inner_id);
-        var overlay_effect = document.querySelector(".overlay");
-        overlay_effect.classList.add("overlay");
+        var card_front = document.querySelector(".card-front");
+        card_front.classList.add("overlay");
         card.classList.remove("animating_back");
         card.classList.add("animating_front");
     }
