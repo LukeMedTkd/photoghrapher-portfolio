@@ -313,6 +313,20 @@ body, html{
   backface-visibility: hidden;
 }
 
+.overlay_shade{
+  animation: shade 0.3s ease-in;
+}
+
+@keyframes shade {
+    from{
+      opacity: 1;
+    }
+
+    to{
+      opacity: 0;
+    }
+  
+}
 
 .overlay section{
   margin: 5px;

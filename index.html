@@ -23,7 +23,7 @@
     function flipCard_front(card_inner_id) {
         var card = document.getElementById(card_inner_id);
         var card_front = document.querySelector(".card-front");
-        card_front.classList.add("overlay");
+        card_front.classList.add(".overlay_shade");
         card.classList.remove("animating_back");
         card.classList.add("animating_front");
     }
