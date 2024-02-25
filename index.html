@@ -28,6 +28,8 @@
 
     function flipCard_back(card_inner_id) {
         var card = document.getElementById(card_inner_id);
+        var overlay_effect = document.querySelector(".overlay");
+        overlay_effect.classList.remove("hover", "focus", "active");
         card.classList.remove("animating_front");
         card.classList.add("animating_back");
     }
