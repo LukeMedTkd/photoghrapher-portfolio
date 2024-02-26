@@ -23,9 +23,9 @@
     function flipCard_front(card_inner_id, overlay_id) {
         var card = document.getElementById(card_inner_id);
         var overlay = document.getElementById(overlay_id);
-        overlay.className += ' overlay_faded';
         card.classList.remove("animating_back");
         card.classList.add("animating_front");
+        overlay.className += ' overlay_faded';
     }
 
     function flipCard_back(card_inner_id, overlay_id) {

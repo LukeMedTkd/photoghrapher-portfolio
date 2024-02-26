@@ -314,7 +314,7 @@ body, html{
 }
 
 .overlay_faded{
-  animation: shade 2.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation: shade 1.2s ease-in-out forwards;
 }
 
 @keyframes shade {
