@@ -20,18 +20,20 @@
     <!-- AOS library - scripts for goals aniamations -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-    function flipCard_front(card_inner_id) {
+    function flipCard_front(card_inner_id, overlay_id) {
         var card = document.getElementById(card_inner_id);
-        var card_front = document.querySelector(".card-front");
-        card_front.classList.add(".overlay_shade");
+        var overlay = document.getElementById(overlay_id);
+        overlay.className += ' overlay_faded';
         card.classList.remove("animating_back");
         card.classList.add("animating_front");
     }
 
-    function flipCard_back(card_inner_id) {
+    function flipCard_back(card_inner_id, overlay_id) {
         var card = document.getElementById(card_inner_id);
         card.classList.remove("animating_front");
         card.classList.add("animating_back");
+        var overlay = document.getElementById(overlay_id);
+        overlay.classList.remove('overlay_faded');
     }
 
 
@@ -88,7 +90,7 @@
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/bn1.jpg" alt="">
-                    <div class="overlay">
+                    <div class="overlay" id="o1">
                         <section>
                             <h3>Subject: <span>The sea</span></h3>
                         </section>
@@ -113,7 +115,7 @@
 
                         <!--FLIP ME button-->
                         <section>
-                            <button onclick="flipCard_front('c1')">
+                            <button onclick="flipCard_front('c1', 'o1')">
                                 <h3>FLIP ME</h3>
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                             </button>
@@ -130,7 +132,7 @@
                     </p>
                     <!--FLIP ME button-->
                     <section>
-                        <button onclick="flipCard_back('c1')">
+                        <button onclick="flipCard_back('c1', 'o1')">
                             <h3>FLIP ME</h3>
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
@@ -147,7 +149,7 @@
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/bn3.jpg" alt="">
-                    <div class="overlay">
+                    <div class="overlay" id="o2">
                         <section>
                             <h3>Subject: <span>Antonella</span></h3>
                         </section>
@@ -172,7 +174,7 @@
 
                         <!--FLIP ME button-->
                         <section>
-                            <button onclick="flipCard_front('c2')">
+                            <button onclick="flipCard_front('c2', 'o2')">
                                 <h3>FLIP ME</h3>
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                             </button>
@@ -187,7 +189,7 @@
                     </p>
                     <!--FLIP ME button-->
                     <section>
-                        <button onclick="flipCard_back('c2')">
+                        <button onclick="flipCard_back('c2', 'o2')">
                             <h3>FLIP ME</h3>
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
@@ -204,7 +206,7 @@
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/bn2.jpg" alt="">
-                    <div class="overlay">
+                    <div class="overlay" id="o3">
                         <section>
                             <h3>Subject: <span>Anonymus</span></h3>
                         </section>
@@ -229,7 +231,7 @@
 
                         <!--FLIP ME button-->
                         <section>
-                            <button onclick="flipCard_front('c3')">
+                            <button onclick="flipCard_front('c3', 'o3')">
                                 <h3>FLIP ME</h3>
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                             </button>
@@ -244,7 +246,7 @@
                     </p>
                     <!--FLIP ME button-->
                     <section>
-                        <button onclick="flipCard_back('c3')">
+                        <button onclick="flipCard_back('c3', 'o3')">
                             <h3>FLIP ME</h3>
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
@@ -261,7 +263,7 @@
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/bn4.jpg" alt="">
-                    <div class="overlay">
+                    <div class="overlay" id="o4">
                         <section>
                             <h3>Subject: <span>Aurora</span></h3>
                         </section>
@@ -286,7 +288,7 @@
 
                         <!--FLIP ME button-->
                         <section>
-                            <button onclick="flipCard_front('c4')">
+                            <button onclick="flipCard_front('c4', 'o4')">
                                 <h3>FLIP ME</h3>
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                             </button>
@@ -301,7 +303,7 @@
                     </p>
                     <!--FLIP ME button-->
                     <section>
-                        <button onclick="flipCard_back('c4')">
+                        <button onclick="flipCard_back('c4', 'o4')">
                             <h3>FLIP ME</h3>
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
@@ -318,7 +320,7 @@
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/bn5.jpg" alt="">
-                    <div class="overlay">
+                    <div class="overlay" id="o5">
                         <section>
                             <h3>Subject: <span>Eleonora</span></h3>
                         </section>
@@ -343,7 +345,7 @@
 
                         <!--FLIP ME button-->
                         <section>
-                            <button onclick="flipCard_front('c5')">
+                            <button onclick="flipCard_front('c5', 'o5')">
                                 <h3>FLIP ME</h3>
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                             </button>
@@ -358,7 +360,7 @@
                     </p>
                     <!--FLIP ME button-->
                     <section>
-                        <button onclick="flipCard_back('c5')">
+                        <button onclick="flipCard_back('c5', 'o5')">
                             <h3>FLIP ME</h3>
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
@@ -375,7 +377,7 @@
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/cosce.jpg" alt="">
-                    <div class="overlay">
+                    <div class="overlay" id="o6">
                         <section>
                             <h3>Subject: <span>Aurora</span></h3>
                         </section>
@@ -400,7 +402,7 @@
 
                         <!--FLIP ME button-->
                         <section>
-                            <button onclick="flipCard_front('c6')">
+                            <button onclick="flipCard_front('c6', 'o6')">
                                 <h3>FLIP ME</h3>
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                             </button>
@@ -415,7 +417,7 @@
                     </p>
                     <!--FLIP ME button-->
                     <section>
-                        <button onclick="flipCard_back('c6')">
+                        <button onclick="flipCard_back('c6', 'o6')">
                             <h3>FLIP ME</h3>
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
@@ -432,7 +434,7 @@
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/portrait1.jpg" alt="">
-                    <div class="overlay">
+                    <div class="overlay" id="o7">
                         <section>
                             <h3>Subject: <span>Simona</span></h3>
                         </section>
@@ -457,7 +459,7 @@
 
                         <!--FLIP ME button-->
                         <section>
-                            <button onclick="flipCard_front('c7')">
+                            <button onclick="flipCard_front('c7', 'o7')">
                                 <h3>FLIP ME</h3>
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                             </button>
@@ -472,7 +474,7 @@
                     </p>
                     <!--FLIP ME button-->
                     <section>
-                        <button onclick="flipCard_back('c7')">
+                        <button onclick="flipCard_back('c7', 'o7')">
                             <h3>FLIP ME</h3>
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
@@ -489,7 +491,7 @@
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/portait2.jpg" alt="">
-                    <div class="overlay">
+                    <div class="overlay" id="o8">
                         <section>
                             <h3>Subject: <span>Eleonora & Aurora</span></h3>
                         </section>
@@ -514,7 +516,7 @@
 
                         <!--FLIP ME button-->
                         <section>
-                            <button onclick="flipCard_front('c8')">
+                            <button onclick="flipCard_front('c8', 'o8')">
                                 <h3>FLIP ME</h3>
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                             </button>
@@ -529,7 +531,7 @@
                     </p>
                     <!--FLIP ME button-->
                     <section>
-                        <button onclick="flipCard_back('c8')">
+                        <button onclick="flipCard_back('c8', 'o8')">
                             <h3>FLIP ME</h3>
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
@@ -546,7 +548,7 @@
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/m.jpg" alt="">
-                    <div class="overlay">
+                    <div class="overlay" id="o9">
                         <section>
                             <h3>Subject: <span>Marianna</span></h3>
                         </section>
@@ -571,7 +573,7 @@
 
                         <!--FLIP ME button-->
                         <section>
-                            <button onclick="flipCard_front('c9')">
+                            <button onclick="flipCard_front('c9', 'o9')">
                                 <h3>FLIP ME</h3>
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                             </button>
@@ -586,7 +588,7 @@
                     </p>
                     <!--FLIP ME button-->
                     <section>
-                        <button onclick="flipCard_back('c9')">
+                        <button onclick="flipCard_back('c9', 'o9')">
                             <h3>FLIP ME</h3>
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
@@ -603,7 +605,7 @@
                 <!-- Front Card-->
                 <div class="card-front">
                     <img src="images/vita_e_morte.jpg" alt="">
-                    <div class="overlay">
+                    <div class="overlay" id="o10">
                         <section>
                             <h3>Subject: <span>Eleonora</span></h3>
                         </section>
@@ -628,7 +630,7 @@
 
                         <!--FLIP ME button-->
                         <section>
-                            <button onclick="flipCard_front('c10')">
+                            <button onclick="flipCard_front('c10', 'o10')">
                                 <h3>FLIP ME</h3>
                                 <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                             </button>
@@ -646,7 +648,7 @@
                     </p>
                     <!--FLIP ME button-->
                     <section>
-                        <button onclick="flipCard_back('c10')">
+                        <button onclick="flipCard_back('c10', 'o10')">
                             <h3>FLIP ME</h3>
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>

@@ -313,8 +313,8 @@ body, html{
   backface-visibility: hidden;
 }
 
-.overlay_shade{
-  animation: shade 0.3s ease-in;
+.overlay_faded{
+  animation: shade 1.3s ease-out;
 }
 
 @keyframes shade {
