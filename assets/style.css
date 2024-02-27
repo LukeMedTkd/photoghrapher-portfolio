@@ -365,9 +365,10 @@ body, html{
   }
 
   .aboutme{
-      width: 100%;
-      height: auto;
-      margin: 20% 15px auto 15px;
+      max-width: 100%;
+      min-width: 300px;
+      /* height: auto; */
+      margin: 120px 15px auto 15px;
   }
   
   .aboutme .img-description{
@@ -382,7 +383,7 @@ body, html{
   
   .img-description img{
       width: 100%;
-      aspect-ratio: 9/16;
+      height: auto;
       object-fit: cover;
   }
   
