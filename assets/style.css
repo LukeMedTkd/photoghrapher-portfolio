@@ -238,8 +238,6 @@ body, html{
     max-width: 950px;
     height: auto;
     position: relative;
-    border-top: 1.5px solid rgb(37, 26, 5);
-    border-bottom: 2px solid rgb(37, 26, 5);
     text-align: center;
     padding-bottom: 30px;
 }
@@ -252,8 +250,9 @@ body, html{
     grid-template: 100% / 200px auto;
     gap: 20px;
     border-top: 1px solid rgb(37, 26, 5);
+    border-bottom: 1px solid rgb(37, 26, 5);
     margin: auto;
-    padding: 25px 0px 0px 0px;
+    padding: 25px 0px 25px 0px;
     overflow: hidden;
 }
 
@@ -350,21 +349,40 @@ body, html{
         display: none;
   }
 
+
+  /*--------------------------------------------*/
+  /*--------------- MAIN CONTAINER ------------*/
+  .main_container{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    background-color: rgba(166, 168, 169, 0.111);
+    display: flex;
+    align-items: center;
+    row-gap: 10px 0px;
+    overflow: hidden;
+  }
+
   .aboutme{
       width: 100%;
       height: auto;
-      margin: 40% 15px auto 15px;
+      margin: 20% 15px auto 15px;
   }
   
   .aboutme .img-description{
-      max-width: 900px;
+      max-width: 100%;
       position: relative;
-      display: block;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 18px 0px;
   }
   
   .img-description img{
       width: 100%;
-      height: auto;
+      aspect-ratio: 9/16;
       object-fit: cover;
   }
   
