@@ -355,13 +355,13 @@ body, html{
   .main_container{
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     width: 100%;
-    height: auto;
+    height: 100vh;
     position: absolute;
     background-color: rgba(166, 168, 169, 0.111);
     display: flex;
     align-items: center;
     row-gap: 10px 0px;
-    overflow: hidden;
+    overflow-y: scroll;
   }
 
   .aboutme{
