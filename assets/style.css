@@ -293,6 +293,12 @@ body, html{
 /*------------- MEDIA QUERYS - mobiles' layout-------------*/
 /*--------------------------------------------------------*/
 @media screen and (max-width: 750px){
+  body{
+    position: absolute;
+    width: 100%;
+    height: auto;
+  }
+
   .name_container{
       cursor: pointer;
       font-family: 'Bodoni Moda', serif;
@@ -357,7 +363,7 @@ body, html{
     width: 100%;
     height: auto;
     position: absolute;
-    background-color: rgba(166, 168, 169, 0.111);
+    background: transparent;
     display: flex;
     align-items: center;
     row-gap: 10px 0px;
@@ -395,6 +401,6 @@ body, html{
 
   .contacts{
     width: 90%;
-    margin: 55% auto;
+    margin: 50% auto;
   }
 }
