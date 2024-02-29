@@ -200,7 +200,7 @@ body, html{
     height: 240px;
     border-top: 1px solid rgb(37, 26, 5);
     border-bottom: 1px solid rgb(37, 26, 5);
-    margin: 50px auto auto auto;
+    margin: 50px auto 50px auto;
     text-align: center;
 }
 
@@ -401,6 +401,6 @@ body, html{
 
   .contacts{
     width: 90%;
-    margin: 50% auto;
+    margin: 60% auto;
   }
 }
