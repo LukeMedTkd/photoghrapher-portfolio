@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
@@ -11,38 +12,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400&display=swap" rel="stylesheet">
+
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <!-- import AOS library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+
 </head>
 
+<!-- BODY -->
 <body tabindex="0">
-
     <!-- AOS library - scripts for goals aniamations -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-    function flipCard_front(card_inner_id, overlay_id) {
-        var card = document.getElementById(card_inner_id);
-        var overlay = document.getElementById(overlay_id);
-        card.classList.remove("animating_back");
-        card.classList.add("animating_front");
-        overlay.className += ' overlay_faded';
-    }
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+    <!-- <script>
+        AOS.init({
+          duration: 600,
+          once: false
+        });
+    </script> -->
 
-    function flipCard_back(card_inner_id, overlay_id) {
-        var card = document.getElementById(card_inner_id);
-        card.classList.remove("animating_front");
-        card.classList.add("animating_back");
-        var overlay = document.getElementById(overlay_id);
-        overlay.classList.remove('overlay_faded');
-    }
-
-
-      AOS.init({
-        duration: 600,
-        once: false
-      });
-
-    </script>
 
     <!-- HEADER fixed - loghi -->
     <div class="header">
@@ -53,9 +41,15 @@
             <label class="menu__btn" for="menu__toggle">
                 <span></span>
             </label>
-        
+
             <ul class="menu__box">
-                <li><a class="menu__item" href="index.html">Portfolio</a></li>
+                <li><a class="menu__item" onclick="menu()">Portfolio</a></li>
+                <div class="mobile-drop-menu" id="mobile-drop-menu">
+                    <a href="">Trips</a>
+                    <a href="assets/weddings.html">Wedding</a>
+                    <a href="">Art</a>
+                    <a href="">Traditions</a>
+                </div>
                 <li><a class="menu__item" href="assets/aboutme.html">About me</a></li>
                 <li><a class="menu__item" href="assets/contacts.html">Contacts</a></li>
             </ul>
@@ -73,13 +67,20 @@
         <!-- NavBar -->
         <div class="menu">
             <ul>
-                <li><a href="index.html">Portfolio</a></li>
+                <li onmouseover="show()" onmouseout="hide()" id="portfolio"><a href="">Portfolio</a></li>
                 <li><a href="assets/aboutme.html">About me</a></li>
                 <li><a href="assets/contacts.html">Contacts</a></li>
             </ul>
+            <div class="drop-menu" id="drop-menu" onmouseover="show()" onmouseout="hide()">
+                <a href="">Trips</a>
+                <a href="assets/weddings.html">Wedding</a>
+                <a href="">Art</a>
+                <a href="">Traditions</a>
+            </div>
         </div>
     </div>
 
+    <!-- MAIN CONTAINER -->
     <div class="main_container">
 
         <!-- 1 CARD -->
@@ -138,7 +139,7 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                  </div>
+                </div>
             </div>
         </div>
 
@@ -195,7 +196,7 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                  </div>
+                </div>
             </div>
         </div>
 
@@ -252,7 +253,7 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                  </div>
+                </div>
             </div>
         </div>
 
@@ -309,11 +310,11 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                  </div>
+                </div>
             </div>
         </div>
 
-        <!-- 5 CARD -->        
+        <!-- 5 CARD -->
         <div class="card_photo" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine">
             <!-- Card Inner-->
             <div class="card-inner" id="c5">
@@ -357,7 +358,10 @@
                 <!-- Back Card-->
                 <div class="card-back">
                     <p>
-                        <span>“</span>Il Sacrificio è un soldato che, seppure vicino alla morte, continua ad aspirare alla libertà. Sostenuto da La Schiavitù, nella forma di un secondo uomo in ceppi e catene, e dalla figura femminile de La Famiglia confortatrice, Il Sacrificio riceve un bacio, ovvero l’estremo saluto, da Il Genio della Libertà. <span>„</span>
+                        <span>“</span>Il Sacrificio è un soldato che, seppure vicino alla morte, continua ad aspirare
+                        alla libertà. Sostenuto da La Schiavitù, nella forma di un secondo uomo in ceppi e catene, e
+                        dalla figura femminile de La Famiglia confortatrice, Il Sacrificio riceve un bacio, ovvero
+                        l’estremo saluto, da Il Genio della Libertà. <span>„</span>
                     </p>
                     <!--FLIP ME button-->
                     <section>
@@ -366,7 +370,7 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                  </div>
+                </div>
             </div>
         </div>
 
@@ -414,7 +418,11 @@
                 <!-- Back Card-->
                 <div class="card-back">
                     <p>
-                        <span>“</span>Soltanto il mare gli brontolava la solita storia lì sotto, in mezzo ai faraglioni perché il mare non ha paese nemmeno lui, ed è di tutti quelli che lo stanno ad ascoltare, di qua e di là dove nasce e muore il sole, [...] ha un modo tutto suo di brontolare, e si riconosce subito al gorgogliare che fa tra quegli scogli nei quali si rompe, e par la voce di un amico<span>„</span>
+                        <span>“</span>Soltanto il mare gli brontolava la solita storia lì sotto, in mezzo ai faraglioni
+                        perché il mare non ha paese nemmeno lui, ed è di tutti quelli che lo stanno ad ascoltare, di qua
+                        e di là dove nasce e muore il sole, [...] ha un modo tutto suo di brontolare, e si riconosce
+                        subito al gorgogliare che fa tra quegli scogli nei quali si rompe, e par la voce di un
+                        amico<span>„</span>
                     </p>
                     <!--FLIP ME button-->
                     <section>
@@ -423,7 +431,7 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                  </div>
+                </div>
             </div>
         </div>
 
@@ -480,7 +488,7 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                  </div>
+                </div>
             </div>
         </div>
 
@@ -537,7 +545,7 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                  </div>
+                </div>
             </div>
         </div>
 
@@ -594,7 +602,7 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                  </div>
+                </div>
             </div>
         </div>
 
@@ -651,7 +659,7 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                    </div>
+                </div>
             </div>
         </div>
 
@@ -708,7 +716,7 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                    </div>
+                </div>
             </div>
         </div>
 
@@ -765,12 +773,14 @@
                             <div><img src="icons/two-thin-arrows-forming-a-circle.png" alt=""></div>
                         </button>
                     </section>
-                    </div>
+                </div>
             </div>
         </div>
 
-        
+        <div class="footer">
+            <h5> Copyright © 2024 | lukemedtkd.github.io/photoghrapher-portfolio</h5>
+        </div>
     </div>
-
 </body>
+
 </html>

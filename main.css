@@ -1,20 +1,27 @@
-*{
+:root {
+  --main-color: rgba(166, 168, 169, 0.111);
+  --header-color: rgba(255, 255, 251, 0.949);
+  --text-color: rgb(37, 26, 5);
+  --main-font: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-} 
+}
 
 
-body, html{
-  background-color: rgba(166, 168, 169, 0.111);
+body,
+html {
+  background-color: var(--primary-color);
 }
 
 /*------------------------------------------*/
 /*------------------ HEADER ---------------*/
-.header{
-  overflow: hidden;
-  background-color:rgba(255, 255, 251, 0.95);
+.header {
+  background-color: var(--header-color);
   position: fixed;
   width: 100%;
   height: auto;
@@ -24,36 +31,36 @@ body, html{
 }
 
 
-.name_container{
+.name_container {
   cursor: pointer;
   font-family: 'Bodoni Moda', serif;
   font-size: 16px;
-  color: rgb(37, 26, 5);
+  color: var(--text-color);
   margin: 20px auto 20px 40px;
 }
 
-.name_container a{
+.name_container a {
   text-decoration: none;
-  color: rgb(37, 26, 5);
+  color: var(--text-color);
 }
 
-.name_container h1{
+.name_container h1 {
   margin: 0;
   text-shadow: 2px 2px 0px rgba(255, 153, 204, 0.586), -3px -2px 0px rgba(100, 165, 183, 0.506);
 }
 
-.name_container h1:nth-child(1){
-  font-weight: 900; 
+.name_container h1:nth-child(1) {
+  font-weight: 900;
   line-height: 32px;
 }
 
-.name_container h1:nth-child(2){
+.name_container h1:nth-child(2) {
   font-weight: 900;
   margin-right: 67px;
   line-height: 38px;
 }
 
-.name_container h1:nth-child(3){
+.name_container h1:nth-child(3) {
   font-weight: 500;
   font-size: 22px;
   letter-spacing: 1.38px;
@@ -62,53 +69,90 @@ body, html{
 
 
 /*--- List Menu Container ---*/
-.menu{
-    margin-right: 28px;
+.menu {
+  margin-right: 28px;
+  font-family: var(--main-font);
 }
 
 .menu ul{
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
   font-size: 18px;
   font-weight: 300;
   list-style-type: none;
   overflow: hidden;
-  padding: 0;
 }
 
-.menu li{
-    display: inline;
-    transition: .3s;
-}
-  
-.menu li a {
-    color:rgb(37, 26, 5); 
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
+.menu .drop-menu {
+  position: absolute;
+  z-index: 5;
+  background: rgb(255, 255, 251);
+  background: linear-gradient(0deg, var(--header-color) 70%, rgba(255, 255, 251, 0) 100%);
+  display: none;
+  padding: 14px 60px 12px 18px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-size: 18px;
+  font-weight: 200;
+  margin: -5px auto auto 1px;
 }
 
-.menu ul:hover > :not(:hover),
-.menu ul:focus > :not(:focus),
-.menu ul:active > :not(:active){
-    opacity: .32;
+.menu .drop-menu a, .mobile-drop-menu a{
+  display: block;
+  width: auto;
+  text-align: left;
+  padding: 1px 0 0 0;
+  text-decoration: none;
+  color: var(--text-color);
+  font-family: var(--main-font);
+}
+
+.menu li {
+  display: inline;
+  transition: .3s;
+}
+
+.menu a {
+  color: var(--text-color);
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+}
+
+#portfolio:hover + div{
+  display: block !important;
+}
+
+.menu ul:hover> :not(:hover),
+.menu ul:focus> :not(:focus),
+.menu ul:active> :not(:active),
+.menu div:hover> :not(:hover),
+.menu div:focus> :not(:focus),
+.menu div:active> :not(:active),
+.menu__box div:hover> :not(:hover),
+.menu__box div:focus> :not(:focus),
+.menu__box div:active> :not(:active) {
+  opacity: .32;
 }
 
 /*------ Hamburger Menu ------*/
 #menu__toggle {
   opacity: 0;
 }
-#menu__toggle:checked + .menu__btn > span {
+
+#menu__toggle:checked+.menu__btn>span {
   transform: rotate(45deg);
 }
-#menu__toggle:checked + .menu__btn > span::before {
+
+#menu__toggle:checked+.menu__btn>span::before {
   top: 0;
   transform: rotate(0deg);
 }
-#menu__toggle:checked + .menu__btn > span::after {
+
+#menu__toggle:checked+.menu__btn>span::after {
   top: 0;
   transform: rotate(90deg);
 }
-#menu__toggle:checked ~ .menu__box {
+
+#menu__toggle:checked~.menu__box {
   left: 0 !important;
 }
 
@@ -123,30 +167,32 @@ body, html{
   z-index: 1;
 }
 
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
   display: block;
   position: relative;
   width: 100%;
   height: 2px;
   border-radius: 30px;
-  background-color: rgb(37, 26, 5);
-  box-shadow: 0.9px 1px 0px rgba(255, 153, 204, 0.586),-0.9px -1px 0px rgba(100, 165, 183, 0.506);
+  background-color: var(--text-color);
+  box-shadow: 0.9px 1px 0px rgba(255, 153, 204, 0.586), -0.9px -1px 0px rgba(100, 165, 183, 0.506);
   fill-opacity: 10px;
   transition-duration: .25s;
 }
 
-.menu__btn > span::before {
+.menu__btn>span::before {
   content: '';
   top: -8px;
 }
-.menu__btn > span::after {
+
+.menu__btn>span::after {
   content: '';
   top: 8px;
 }
 
 .menu__box {
+  cursor: pointer;
   display: block;
   position: fixed;
   top: 0;
@@ -157,9 +203,9 @@ body, html{
   padding-left: 70px;
   padding-top: 100px;
   list-style: none;
-  background-color:rgba(255, 255, 251, 0.797);
+  background-color: rgba(255, 255, 251, 0.797);
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);  
+  backdrop-filter: blur(10px);
   box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
   transition-duration: .25s;
 }
@@ -167,17 +213,25 @@ body, html{
 .menu__item {
   display: block;
   padding: 12px 24px;
-  color: rgb(37, 26, 5);
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  color: var(--text-color);
+  font-family: var(--main-font);
   font-size: 20px;
   font-weight: 300;
   text-decoration: none;
   transition-duration: .25s;
 }
 
-.hamburger-menu ul:hover > :not(:hover),
-.hamburger-menu ul:focus > :not(:focus),
-.hamburger-menu ul:active > :not(:active){
+.mobile-drop-menu{
+  position: relative;
+  display: none;
+  font-size: 18px;
+  font-weight: 200;
+  margin: -10px auto 7px 35px;
+}
+
+.hamburger-menu ul:hover> :not(:hover),
+.hamburger-menu ul:focus> :not(:focus),
+.hamburger-menu ul:active> :not(:active) {
   opacity: .4;
 }
 
@@ -185,7 +239,7 @@ body, html{
 
 /*--------------------------------------------*/
 /*--------------- MAIN CONTAINER ------------*/
-.main_container{
+.main_container {
   width: auto;
   height: auto;
   position: absolute;
@@ -195,14 +249,15 @@ body, html{
   background-color: transparent;
   gap: 5vw 0;
   margin: 150px auto auto auto;
-  padding-bottom: 70px;
+  padding-bottom: 150px;
 }
 
 
 /*---------------------------------------------------*/
 /*--------------------- Cards ----------------------*/
-.card_photo{
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
+.card_photo {
+  cursor: pointer;
+  font-family: var(--main-font);
   margin: auto 10px 5px;
   position: relative;
   width: 28vw;
@@ -219,11 +274,11 @@ body, html{
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.animating_front{
+.animating_front {
   animation: oscillate1 1.8s cubic-bezier(1, -0.25, 0.26, 1) forwards;
 }
 
-.animating_back{
+.animating_back {
   animation: oscillate2 1s cubic-bezier(1, 0.1, 0.3, 1) forwards;
 }
 
@@ -231,22 +286,24 @@ body, html{
   0% {
     transform: rotateY(0deg);
   }
+
   100% {
     transform: rotateY(180deg);
   }
 }
+
 @keyframes oscillate2 {
-  from{
+  from {
     transform: rotateY(-180deg);
   }
-  to{
+
+  to {
     transform: rotateY(0deg);
   }
-} 
+}
 
-.card-front:hover .overlay
-{
-    opacity: 1;
+.card-front:hover .overlay {
+  opacity: 1;
 }
 
 .card-front,
@@ -257,8 +314,8 @@ body, html{
   backface-visibility: hidden;
 }
 
-.card-back{
-  background: linear-gradient(180deg, rgba(255,255,255,1) 35%, rgba(192,198,199,1) 100%);
+.card-back {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 35%, rgba(192, 198, 199, 1) 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -266,7 +323,7 @@ body, html{
   transform: perspective(500px) rotateY(180deg);
 }
 
-.card-back p{
+.card-back p {
   margin: 0;
   font-size: 18px;
   font-weight: 300;
@@ -278,26 +335,26 @@ body, html{
 }
 
 
-.card-back p span{
+.card-back p span {
   font-size: 44px;
   line-height: 0px;
 }
 
-.card-back p span:nth-child(1){
+.card-back p span:nth-child(1) {
   margin: auto 5px auto auto;
 }
 
-.card-back p span:nth-child(2){
+.card-back p span:nth-child(2) {
   margin: auto auto auto 10px;
 }
 
-.card_photo img{
+.card_photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.overlay{
+.overlay {
   width: 100%;
   height: 100%;
   display: flex;
@@ -313,41 +370,42 @@ body, html{
   backface-visibility: hidden;
 }
 
-.overlay_faded{
+.overlay_faded {
   animation: shade 1.2s ease-in-out forwards;
 }
 
 @keyframes shade {
-    from{
-      opacity: 1;
-    }
+  from {
+    opacity: 1;
+  }
 
-    to{
-      opacity: 0;
-    }
-  
+  to {
+    opacity: 0;
+  }
+
 }
 
-.overlay section{
+.overlay section {
+  color: var(--text-color);
   margin: 5px;
   width: auto;
   height: auto;
 }
 
-.overlay h3{
+.overlay h3 {
   margin: 0;
   font-size: 20px;
   font-weight: 300;
   line-height: 18px;
 }
 
-.overlay span{
+.overlay span {
   font-size: 18px;
   font-weight: 200;
 }
 
 /* Photos Features */
-.overlay section:nth-last-child(2){
+.overlay section:nth-last-child(2) {
   position: relative;
   height: auto;
   width: 50%;
@@ -362,20 +420,20 @@ body, html{
   opacity: .7;
 }
 
-.overlay section:nth-last-child(2) div{
+.overlay section:nth-last-child(2) div {
   position: relative;
   width: 20px;
   height: 20px;
 }
 
-.overlay section:nth-last-child(2) h3{
+.overlay section:nth-last-child(2) h3 {
   font-size: 14px;
   font-weight: 200;
 }
 
 /* Flip Me button */
 .overlay button,
-.card-back button{
+.card-back button {
   position: relative;
   font-family: inherit;
   color: inherit;
@@ -398,19 +456,20 @@ body, html{
 .overlay button:active,
 .overlay button:focus,
 .card-back button:active,
-.overlay button:focus{
+.overlay button:focus {
   background-color: inherit;
   text-decoration: none;
   font-style: none;
 }
 
 .overlay section:nth-last-child(1),
-.card-back section:nth-last-child(1){
+.card-back section:nth-last-child(1) {
   position: absolute;
   bottom: 20px;
 }
+
 .overlay section:nth-last-child(1) div,
-.card-back section:nth-last-child(1) div{
+.card-back section:nth-last-child(1) div {
   position: relative;
   width: 23px;
   height: 23px;
@@ -418,26 +477,39 @@ body, html{
 }
 
 .overlay section:nth-last-child(1) h3,
-.card-back section:nth-last-child(1) h3{
+.card-back section:nth-last-child(1) h3 {
   position: relative;
   font-size: 18px;
   font-weight: 200;
   transform: rotateX(35deg);
 }
 
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  display: grid;
+  place-content: center;
+  box-shadow: 0px -10px 40px rgba(0, 0, 0, 0.176);
+  background-color: var(--main-color);
+}
+
+.footer h5{
+  font: 200 14px var(--main-font);
+  
+}
+
 
 /*----------------------------------------------------------*/
 /*------------------ MEDIA QUERYS - 1090px ----------------*/
 /*--------------------------------------------------------*/
-@media screen and (max-width: 1090px){
+@media screen and (max-width: 1090px) {
 
   /*--------------------------------------------*/
   /*--------------- MAIN CONTAINER ------------*/
-  .main_container{
-    padding: 0px 30px 70px;
-  }   
 
-  .card_photo{
+  .card_photo {
     width: 430px;
     height: 580px;
   }
@@ -448,13 +520,13 @@ body, html{
 /*----------------------------------------------------------*/
 /*----------------- MEDIA QUERYS - 990px ------------------*/
 /*--------------------------------------------------------*/
-@media screen and (max-width: 990px){
+@media screen and (max-width: 990px) {
 
   /*--------------------------------------------*/
   /*--------------- MAIN CONTAINER ------------*/
-  .card_photo{
+  .card_photo {
     width: 380px;
-    height: 530px; 
+    height: 530px;
   }
 
 }
@@ -464,11 +536,11 @@ body, html{
 /*----------------- MEDIA QUERYS - 880px ------------------*/
 /*--------------------------------------------------------*/
 
-@media screen and (max-width: 880px){
+@media screen and (max-width: 880px) {
 
   /*--------------------------------------------*/
-  /*--------------- MAIN CONTAINER ------------*/  
-  .card_photo{
+  /*--------------- MAIN CONTAINER ------------*/
+  .card_photo {
     width: 330px;
     height: 480px;
   }
@@ -479,47 +551,48 @@ body, html{
 /*----------------------------------------------------------*/
 /*------------- MEDIA QUERYS - mobiles' layout-------------*/
 /*--------------------------------------------------------*/
-@media screen and (max-width: 760px){
+@media screen and (max-width: 760px) {
 
   /*------------------------------------------*/
   /*------------------ HEADER ---------------*/
-  .name_container{
+  .name_container {
     cursor: pointer;
     font-family: 'Bodoni Moda', serif;
     font-size: 10px;
-    color: rgb(37, 26, 5);
+    color: var(--text-color);
     margin: 20px auto 20px;
   }
 
-  .name_container h1{
+  .name_container h1 {
     font-size: 24px;
     margin: 0;
     text-shadow: 2px 2px 0px rgba(255, 153, 204, 0.586), -3px -2px 0px rgba(100, 165, 183, 0.506);
   }
-  
+
   .name_container a h1:nth-child(1) {
     font-weight: 900;
     line-height: 18px;
   }
-  
-  .name_container a h1:nth-child(2){
+
+  .name_container a h1:nth-child(2) {
     font-weight: 900;
     margin-right: 67px;
     line-height: 30px;
   }
-  
-  .name_container a h1:nth-child(3){
+
+  .name_container a h1:nth-child(3) {
     font-weight: 500;
     font-size: 20px;
     letter-spacing: 1.38px;
     line-height: 13px;
   }
 
-  .menu__btn > span::before {
+  .menu__btn>span::before {
     content: '';
     top: -6px;
   }
-  .menu__btn > span::after {
+
+  .menu__btn>span::after {
     content: '';
     top: 4px;
   }
@@ -534,19 +607,19 @@ body, html{
     z-index: 1;
   }
 
-  .menu{
-      display: none;
+  .menu {
+    display: none;
   }
 
   /*--------------------------------------------*/
   /*--------------- MAIN CONTAINER ------------*/
-  .main_container{
+  .main_container {
     width: 100%;
     height: auto;
-    padding: 0px 35px 70px;
-  }   
+    padding: 0px 35px 130px;
+  }
 
-  .card_photo{
+  .card_photo {
     margin: auto;
     padding: 0;
     position: relative;

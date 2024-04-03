@@ -1,38 +1,45 @@
+:root {
+  --main-color: rgba(166, 168, 169, 0.111);
+  --header-color: rgba(255, 255, 251, 0.95);
+  --text-color: rgb(37, 26, 5);
+  --main-font: 'IBM Plex Sans Arabic', sans-serif;
+  --logo-font: 'Bodoni Moda', serif;
+}
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  } 
+} 
   
   
 body, html{
-  background-color: rgba(166, 168, 169, 0.111);
+  background-color: var(--main-color);
 }
 
 /*--------------------------------------------*/
 /*------------------ HEADER -----------------*/
 .header{
   overflow: hidden;
-  background-color:rgba(255, 255, 251, 0.95);
+  background-color: var(--header-color);
   position: fixed;
   width: 100%;
   height: auto;
   display: flex;
   place-items: center;
   z-index: 1;
-  }
+}
 
 .name_container{
   cursor: pointer;
-  font-family: 'Bodoni Moda', serif;
-  color: rgb(37, 26, 5);
+  font-family: var(--logo-font);
   margin: 20px auto 20px 40px;
 }
 
 .name_container a{
   text-decoration: none;
-  color: rgb(37, 26, 5);
+  color: var(--text-color);
 }
 
 .name_container h1{
@@ -65,24 +72,24 @@ body, html{
 }
 
 .menu ul{
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    list-style-type: none;
-    overflow: hidden;
-    padding: 0;
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-weight: 300;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
 }
 
 .menu li{
-    display: inline;
-    transition: .3s;
+  display: inline;
+  transition: .3s;
 }
   
 .menu li a {
-    color:rgb(37, 26, 5); 
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
+  color:var(--text-color); 
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
 }
 
 .menu ul:hover > :not(:hover),
@@ -94,197 +101,270 @@ body, html{
 /*------ Hamburger Menu ------*/
 #menu__toggle {
     opacity: 0;
-  }
-  #menu__toggle:checked + .menu__btn > span {
-    transform: rotate(45deg);
-  }
-  #menu__toggle:checked + .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0deg);
-  }
-  #menu__toggle:checked + .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
-  #menu__toggle:checked ~ .menu__box {
-    left: 0 !important;
-  }
-  
-  .menu__btn {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 55px;
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 1;
-  }
-  
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 2px;
-    border-radius: 30px;
-    background-color: rgb(37, 26, 5);
-    box-shadow: 0.9px 1px 0px rgba(255, 153, 204, 0.586),-0.9px -1px 0px rgba(100, 165, 183, 0.506);
-    fill-opacity: 10px;
-    transition-duration: .25s;
-  }
-  
-  .menu__btn > span::before {
-    content: '';
-    top: -8px;
-  }
-  .menu__btn > span::after {
-    content: '';
-    top: 8px;
-  }
-  
-  .menu__box {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding-left: 70px;
-    padding-top: 100px;
-    list-style: none;
-    background-color:rgba(255, 255, 251, 0.797);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);  
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-    transition-duration: .25s;
-  }
-  
-  .menu__item {
-    display: block;
-    padding: 12px 24px;
-    color: rgb(37, 26, 5);
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    text-decoration: none;
-    transition-duration: .25s;
-  }
-  
-  .hamburger-menu ul:hover > :not(:hover),
-  .hamburger-menu ul:focus > :not(:focus),
-  .hamburger-menu ul:active > :not(:active){
-    opacity: .4;
-  }
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+
+.menu__btn {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 55px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 2px;
+  border-radius: 30px;
+  background-color: var(--text-color);
+  box-shadow: 0.9px 1px 0px rgba(255, 153, 204, 0.586),-0.9px -1px 0px rgba(100, 165, 183, 0.506);
+  fill-opacity: 10px;
+  transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-left: 70px;
+  padding-top: 100px;
+  list-style: none;
+  background-color:rgba(255, 255, 251, 0.797);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);  
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  transition-duration: .25s;
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-size: 20px;
+  font-weight: 300;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+
+.hamburger-menu ul:hover > :not(:hover),
+.hamburger-menu ul:focus > :not(:focus),
+.hamburger-menu ul:active > :not(:active){
+  opacity: .4;
+}
 
 
 
 /*--------------------------------------------*/
 /*--------------- MAIN CONTAINER ------------*/
 .main_container{
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba(166, 168, 169, 0.111);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  font-family: var(--main-font);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .contacts{
-    width: 800px;
-    height: 240px;
-    border-top: 1px solid rgb(37, 26, 5);
-    border-bottom: 1px solid rgb(37, 26, 5);
-    margin: 50px auto 50px auto;
-    text-align: center;
+  width: 800px;
+  height: 240px;
+  border-top: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+  margin: 50px auto 50px auto;
+  text-align: center;
 }
 
 .contacts h1{
-    cursor: pointer;
-    margin: 25px auto 10px;
-    font-size: 20px;
-    font-weight: 300;
+  cursor: pointer;
+  margin: 25px auto 10px;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .contacts p{
-    cursor: pointer;
-    font-size: 17px;
-    font-weight: 100;
-    margin: 4px;
-    opacity: .7;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 100;
+  margin: 4px;
+  opacity: .7;
 }
 
 .contacts section{
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 .contacts section img{
-    margin: 0 5px 0;
-    height: 25px;
-    width: auto;
+  margin: 0 5px 0;
+  height: 25px;
+  width: auto;
 }
 
 .aboutme{
-    max-width: 950px;
-    height: auto;
-    position: relative;
-    text-align: center;
-    padding-bottom: 30px;
+  max-width: 950px;
+  height: auto;
+  position: relative;
+  text-align: center;
+  padding-bottom: 30px;
 }
 
 .img-description{
-    width: 85%;
-    height: 100%;
-    position: relative;
-    display: grid;
-    grid-template: 100% / 200px auto;
-    gap: 20px;
-    border-top: 1px solid rgb(37, 26, 5);
-    border-bottom: 1px solid rgb(37, 26, 5);
-    margin: auto;
-    padding: 25px 0px 25px 0px;
-    overflow: hidden;
+  width: 85%;
+  height: 100%;
+  position: relative;
+  display: grid;
+  grid-template: 100% / 200px auto;
+  gap: 20px;
+  border-top: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+  margin: auto;
+  padding: 25px 0px 25px 0px;
+  overflow: hidden;
 }
 
 .img-description img{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 
 .description-container{
-    position: relative;
-    text-align: justify;
-    overflow: scroll;
+  position: relative;
+  text-align: justify;
+  overflow: hidden;
 }
 
 .aboutme h1{
-    cursor: pointer;
-    margin: 20px auto 10px;
-    font-size: 20px;
-    font-weight: 300;
+  cursor: pointer;
+  margin: 20px auto 10px;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .aboutme p{
-    font-size: 18px;
-    font-weight: 100;
-    line-height: 17px;
-    margin: 4px;
-    opacity: .7;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 17px;
+  margin: 4px;
+  opacity: .7;
 }
 
+
+/*----------------------------------------------------------*/
+/*------------------------ GALLERY ------------------------*/
+.wedding-container{
+  z-index: 0;
+  font-family: var(--main-font);
+  background-color: var(--main-color);
+  position: relative;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 0px 30% 0px;
+}
+
+.wedding-container h1{
+  font-size: 40px;
+  font-weight: 900;
+  text-align: left;
+}
+
+.wedding-container p{
+  font-size: 18px;
+  font-weight: 300;
+  text-align: justify;
+  margin-top: 8px;
+  line-height: 1.15;
+}
+
+.gallery {
+  z-index: 0;
+  font-family: var(--main-font);
+  box-shadow: 0px -10px 20px 0px rgba(0, 0, 0, 0.279);
+  width: 100%;
+  height: auto;
+  position: absolute;
+  background-color: var(--main-color);
+  padding: 30px 30px 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(50, 5vw);
+  grid-gap: 30px;
+}
+
+.gallery img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery #item1{
+  grid-column: 1 / span 4;
+  grid-row: 1 /span 7;
+}
+
+.gallery #item2{
+  grid-column: 5 / span 3;
+  grid-row: 1 /span 4;
+}
+
+.gallery #item3{
+  grid-column: 8 / span 5;
+  grid-row: 1 /span 8;
+}
+
+.gallery #item4{
+  grid-column: 5 / span 3;
+  grid-row: 5 /span 5;
+}
+
+.gallery #item5{
+  grid-column: 1 / span 4;
+  grid-row: 8 /span 7;
+}
 
 
 
@@ -301,9 +381,9 @@ body, html{
 
   .name_container{
       cursor: pointer;
-      font-family: 'Bodoni Moda', serif;
+      font-family: var(--logo-font);
       font-size: 10px;
-      color: rgb(37, 26, 5);
+      color: var(--text-color);
       margin: 20px auto 20px;
   }
 
@@ -359,7 +439,7 @@ body, html{
   /*--------------------------------------------*/
   /*--------------- MAIN CONTAINER ------------*/
   .main_container{
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-family: var(--main-font);
     width: 100%;
     height: auto;
     position: absolute;
