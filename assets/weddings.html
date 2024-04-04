@@ -3,35 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
-    <link rel="stylesheet" href="style.css">
     <title>Weddiing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../commonstyle.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400&display=swap" rel="stylesheet">
+
+    <script src="../main.js"></script>
 </head>
 
 <body>
 
-<!-- HEADER fixed - loghi -->
-
-
+    <!-- HEADER fixed - loghi -->
     <div class="header">
 
         <!-- Hamburger Menu -->
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />
             <label class="menu__btn" for="menu__toggle">
-              <span></span>
+                <span></span>
             </label>
-        
+
             <ul class="menu__box">
-                <li><a class="menu__item" href="../index.html">Portfolio</a></li>
+                <li><a class="menu__item" onclick="menu()"">Portfolio</a></li>
+                <!-- di default questo tag non ha style html, l'unico stile che possiede è il css, tuttavia il css non è controllabile da js -->
+                <!-- document.style è in grado di accedere solo ai valori del tag style=""  e non del css, per questo motivo il valore iniziale di style.display era NULL e veniva inizializzato a none (nell'else), al secondo click l'if veniva evaluato a none e quindi il codice funzioanva-->
+                <div class="mobile-drop-menu" id="mobile-drop-menu" style="display:none"> 
+                    <a href="">Trips</a>
+                    <a href="weddings.html">Wedding</a>
+                    <a href="">Art</a>
+                    <a href="">Traditions</a>
+                </div>
                 <li><a class="menu__item" href="aboutme.html">About me</a></li>
                 <li><a class="menu__item" href="contacts.html">Contacts</a></li>
             </ul>
         </div>
-        
+
         <!-- Logo -->
         <div class="name_container">
             <a href="../index.html">
-                <h1 >MARIANNA</h1>
+                <h1>MARIANNA</h1>
                 <h1>FENU</h1>
                 <h1>Photographer</h1>
             </a>
@@ -40,14 +55,18 @@
         <!-- NavBar -->
         <div class="menu">
             <ul>
-                <li><a href="../index.html">Portfolio</a></li>
+                <li onmouseover="show()" onmouseout="hide()" id="portfolio"><a href="">Portfolio</a></li>
                 <li><a href="aboutme.html">About me</a></li>
                 <li><a href="contacts.html">Contacts</a></li>
             </ul>
+            <div class="drop-menu" id="drop-menu" onmouseover="show()" onmouseout="hide()">
+                <a href="">Trips</a>
+                <a href="weddings.html">Wedding</a>
+                <a href="">Art</a>
+                <a href="">Traditions</a>
+            </div>
         </div>
-
     </div>
-
     
     <div class="wedding-container">
         <h1>Wedding</h1>
@@ -59,6 +78,10 @@
         <img src="../images/abbraccio_matrimonio.jpg" alt="" id="item3">
         <img src="../images/dettaglio_matrimonio.jpg" alt="" id="item4">
         <img src="../images/ritratto_matrimenio.jpg" alt="" id="item5">
+    </div>
+
+    <div class="footer" style="position: relative; bottom: 0;">
+        <h5> Copyright © 2024 | lukemedtkd.github.io/photoghrapher-portfolio</h5>
     </div>
 
 </body>
