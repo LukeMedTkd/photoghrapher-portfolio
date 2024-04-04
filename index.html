@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400&display=swap" rel="stylesheet">
 
     <script src="main.js"></script>
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <!-- import AOS library -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
 
@@ -43,8 +42,10 @@
             </label>
 
             <ul class="menu__box">
-                <li><a class="menu__item" onclick="menu()">Portfolio</a></li>
-                <div class="mobile-drop-menu" id="mobile-drop-menu">
+                <li><a class="menu__item" onclick="menu()"">Portfolio</a></li>
+                <!-- di default questo tag non ha style html, l'unico stile che possiede è il css, tuttavia il css non è controllabile da js -->
+                <!-- document.style è in grado di accedere solo ai valori del tag style=""  e non del css, per questo motivo il valore iniziale di style.display era NULL e veniva inizializzato a none (nell'else), al secondo click l'if veniva evaluato a none e quindi il codice funzioanva-->
+                <div class="mobile-drop-menu" id="mobile-drop-menu" style="display:none"> 
                     <a href="">Trips</a>
                     <a href="assets/weddings.html">Wedding</a>
                     <a href="">Art</a>

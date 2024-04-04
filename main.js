@@ -25,10 +25,14 @@ function hide(){
 }
 
 function menu(){
-    var menu = document.getElementById("mobile-drop-menu");
-    if (menu.style.display == "none"){
-        menu.style.display = "block";
-        return;
+    let stocazzo = document.getElementById("mobile-drop-menu");
+    // console.log("stocazzo detected")
+    // console.log(stocazzo.style.display)
+    if(stocazzo.style.display === "none"){
+        stocazzo.style.display = "block";
     }
-    menu.style.display = "none";
+    else{
+        stocazzo.style.display = "none";
+    }
+    //document.getElementById("mobile-drop-menu").style.display === "none" ? document.getElementById("mobile-drop-menu").style.display = "block" : document.getElementById("mobile-drop-menu").style.display = "none";
 }

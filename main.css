@@ -210,6 +210,10 @@ html {
   transition-duration: .25s;
 }
 
+.menu__box a{
+  z-index: 2;
+}
+
 .menu__item {
   display: block;
   padding: 12px 24px;
