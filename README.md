@@ -10,7 +10,7 @@ Al passaggio del mouse, emergono i **dettagli tecnici** — *ISO, tempi di scatt
 ---
 
 <p align="center">
-  <img src="INSERISCI_QUI_IL_LINK_DELLA_GIF" alt="Demo Portfolio Marianna Fenu" width="100%">
+  <img src="animazione" alt="Demo Portfolio Marianna Fenu" width="100%">
 </p>
 
 ---
